@@ -12,14 +12,14 @@ contract Hello {
         address winner;
     }
 
-    mapping(uint => Game) games;
-    uint[] gameIds;
+    mapping(uint => Game) public games;
+    uint[] public gameIds;
 
     constructor() {
     }
 
     function startGame(uint newId) public returns (bool) {
-        if (games[newId].initialized == false) {
+        if (games[newId].initialized == true) {
             revert("Game exists");
         }
         games[newId].initialized = true;
@@ -27,9 +27,7 @@ contract Hello {
         return true;
     }
 
-    function winningProposal() public view
-            returns (uint winningProposal_)
-    {
-        return 41;
+    function listGameIds() public view returns (uint[] memory) {
+        return gameIds;
     }
 }

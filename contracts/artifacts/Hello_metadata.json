@@ -14,6 +14,62 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "gameIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "games",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "initialized",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listGameIds",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "newId",
 						"type": "uint256"
 					}
@@ -27,19 +83,6 @@
 					}
 				],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "winningProposal",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "winningProposal_",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -73,10 +116,10 @@
 	},
 	"sources": {
 		"contracts/4_Hello.sol": {
-			"keccak256": "0x3f7b77b7158643ff9caeaf511d6752f86880875c7476ed6c10f6e9b993154fc5",
+			"keccak256": "0x40b0848a661968644e448e2217e905463932a0f95d62e70e2513ce504af223ce",
 			"urls": [
-				"bzz-raw://409c81ef5b6cc3f1fb38433dbe9721813ecc8811ff2c7c34f4ab6433bc9d4e3d",
-				"dweb:/ipfs/QmQkvsrsex68Yz1v94zvjSA6iEM57BDYwHn1XpYRFZWUDS"
+				"bzz-raw://27428f63bdc25150a36433a071d7bfff9a773a419fe0bee7f1b3caa8694b9297",
+				"dweb:/ipfs/QmXaYSR39Q1FE9cjqFXPvPefNZ3oGMQxy3c17P77Wf2QVf"
 			]
 		}
 	},
