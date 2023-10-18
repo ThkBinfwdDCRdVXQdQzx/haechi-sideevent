@@ -1,10 +1,14 @@
 pragma solidity >=0.7.0 <0.9.0;
 
+import {Context} from "./context.sol";
+import {IERC20} from "./IERC20.sol";
+import {Ownable} from "./ownable.sol";
+
 /** 
  * @title Ballot
  * @dev Implements voting process along with vote delegation
  */
-contract Hello {
+contract Hello is Context, Ownable {
     struct Game {
         bool initialized;
         mapping(address => uint) bettings;
@@ -15,8 +19,14 @@ contract Hello {
 
     mapping(uint => Game) public games;
     uint[] public gameIds;
+    address public tokenContract;
 
     constructor() {
+    }
+
+    function setErc20(address newContract) public returns (bool) {
+        tokenContract = newContract;
+        return true;
     }
 
     function startGame(uint newId) public returns (bool) {
@@ -63,6 +73,5 @@ contract Hello {
     function myBetting(uint gameId) public view returns (uint) {
         require(games[gameId].initialized, "Game Initialized");
         return games[gameId].bettings[msg.sender];
-
     }
 }
