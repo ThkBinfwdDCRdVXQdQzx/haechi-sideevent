@@ -9,6 +9,7 @@ import {Ownable} from "./ownable.sol";
  * @dev Implements voting process along with vote delegation
  */
 contract Hello is Context, Ownable {
+// contract Hello {
     struct Game {
         bool initialized;
         mapping(address => uint) bettings;
@@ -21,8 +22,10 @@ contract Hello is Context, Ownable {
     uint[] public gameIds;
     address public tokenContract;
 
-    constructor() {
+    constructor(address initialOwner) Ownable(initialOwner) {
+        
     }
+
 
     function setErc20(address newContract) public returns (bool) {
         tokenContract = newContract;
@@ -43,6 +46,7 @@ contract Hello is Context, Ownable {
     function bet(uint gameId, uint amount) public returns (bool) {
         require(games[gameId].initialized, "Game Initialized");
         require(games[gameId].winner == address(0), "Finished");
+        // IERC20(tokenContract).balanceOf(msg.sender)
         // send erc20 to this.
         if (games[gameId].bettings[msg.sender] == 0) {
             games[gameId].users.push(msg.sender);

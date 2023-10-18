@@ -6,9 +6,56 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "initialOwner",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
 			},
 			{
 				"inputs": [
@@ -182,6 +229,45 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newContract",
+						"type": "address"
+					}
+				],
+				"name": "setErc20",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -199,12 +285,60 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
 			"details": "Implements voting process along with vote delegation",
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
 			"title": "Ballot",
 			"version": 1
 		},
@@ -231,10 +365,34 @@
 	},
 	"sources": {
 		"contracts/4_Hello.sol": {
-			"keccak256": "0x8887708237f36ccb5228fb45824e16f3377871a3b0d07eb38c76e412f610e76c",
+			"keccak256": "0x361a70cf4e84190268b7c40a9c58d5c666c0b0c97d4789fef7c73d68e8877a74",
 			"urls": [
-				"bzz-raw://8f075608d2f510a5879aa7ef45d1ac209b2f89328d2038d4cdda34acc7d0f6ea",
-				"dweb:/ipfs/QmWVTsZYQmhBJiSVdbm85KxvM4SyZQiHTEHQBvaYWJ6kf2"
+				"bzz-raw://09a47da853dbb729a75ae4481fce065f2423ddd3a1fd63ce71897b471e309665",
+				"dweb:/ipfs/QmNTUHrSo5HkgynN8jU5g8dyojzbgrT6DNDK714swihf94"
+			]
+		},
+		"contracts/IERC20.sol": {
+			"keccak256": "0x0b155b99b4f18984d21d89ff08d71910b51f6d4ddcafdd4857799e466e0fd3f3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f942dd0504edd5aa6b3234fd04c1d9f4c31f6f982462c4911d28a302a383e7f4",
+				"dweb:/ipfs/QmYKVAWM4aVxqcUjcPgGGrbwTtM42iLEpuhUnrC1XYPXC7"
+			]
+		},
+		"contracts/context.sol": {
+			"keccak256": "0x2a1d20a48a4e14b43446827275e9c119783447384c4d1b948cfa532a9765cb58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce800e3f1300ee2c27d417cc1c6d8d773fdf85804cc7efeaff42e0f6a784fce0",
+				"dweb:/ipfs/QmUygAkKmLD8gkDc7yGXhMNTivbgeJV3coYUBg232zpXc9"
+			]
+		},
+		"contracts/ownable.sol": {
+			"keccak256": "0xfb556813b6d95cedb4ac111250f0a945aa370b30880f22a27088f95ad7519972",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6eaa30f0ee7a5449c8e2c3285f5c3fa805c81ee4b8c013e1145575b018778d98",
+				"dweb:/ipfs/QmZ6nAm5rfw4rsSb3tniJfrhQFnmh51tngPrnspXNuyYv7"
 			]
 		}
 	},
