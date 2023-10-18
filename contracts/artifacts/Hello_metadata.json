@@ -14,6 +14,54 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "bet",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"name": "finish",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -24,6 +72,25 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					}
+				],
+				"name": "gameUsers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -45,9 +112,38 @@
 						"type": "bool"
 					},
 					{
+						"internalType": "uint256",
+						"name": "totalBettings",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "winner",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "better",
+						"type": "address"
+					}
+				],
+				"name": "getBetting",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -61,6 +157,25 @@
 						"internalType": "uint256[]",
 						"name": "",
 						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					}
+				],
+				"name": "myBetting",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -116,10 +231,10 @@
 	},
 	"sources": {
 		"contracts/4_Hello.sol": {
-			"keccak256": "0x40b0848a661968644e448e2217e905463932a0f95d62e70e2513ce504af223ce",
+			"keccak256": "0x852a1d1b93ad003068fadbbbe85bb4fa09cd8e8c706b1d648624ebcf79c61c94",
 			"urls": [
-				"bzz-raw://27428f63bdc25150a36433a071d7bfff9a773a419fe0bee7f1b3caa8694b9297",
-				"dweb:/ipfs/QmXaYSR39Q1FE9cjqFXPvPefNZ3oGMQxy3c17P77Wf2QVf"
+				"bzz-raw://d1a122e512dc6c8445eb8f454c4a5fbc02141c8113d19fc22c9d4e51416d6f8c",
+				"dweb:/ipfs/QmYHwKumKK55SnJzrsvpjpEQT96gP3pEX444Gmtn1pd1jv"
 			]
 		}
 	},
