@@ -314,7 +314,6 @@
 			}
 		],
 		"devdoc": {
-			"details": "Implements voting process along with vote delegation",
 			"errors": {
 				"OwnableInvalidOwner(address)": [
 					{
@@ -339,7 +338,6 @@
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			},
-			"title": "Ballot",
 			"version": 1
 		},
 		"userdoc": {
@@ -365,10 +363,10 @@
 	},
 	"sources": {
 		"contracts/4_Hello.sol": {
-			"keccak256": "0x361a70cf4e84190268b7c40a9c58d5c666c0b0c97d4789fef7c73d68e8877a74",
+			"keccak256": "0xb2aa1f345421fb0f59a59e0847d60a3a100869c05ad89fdfd333001894e46ee1",
 			"urls": [
-				"bzz-raw://09a47da853dbb729a75ae4481fce065f2423ddd3a1fd63ce71897b471e309665",
-				"dweb:/ipfs/QmNTUHrSo5HkgynN8jU5g8dyojzbgrT6DNDK714swihf94"
+				"bzz-raw://d99aee597d23d6663c05b4cd0283b4e163e389af5cb659d6b2b39aeb2b224c18",
+				"dweb:/ipfs/QmZvpPnWagyHFiWuyC9CuvzPi91NnWXf4ACmgbTxK5zWbf"
 			]
 		},
 		"contracts/IERC20.sol": {

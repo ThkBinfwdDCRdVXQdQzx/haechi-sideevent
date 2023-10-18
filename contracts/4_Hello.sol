@@ -4,12 +4,7 @@ import {Context} from "./context.sol";
 import {IERC20} from "./IERC20.sol";
 import {Ownable} from "./ownable.sol";
 
-/** 
- * @title Ballot
- * @dev Implements voting process along with vote delegation
- */
 contract Hello is Context, Ownable {
-// contract Hello {
     struct Game {
         bool initialized;
         mapping(address => uint) bettings;
@@ -46,8 +41,9 @@ contract Hello is Context, Ownable {
     function bet(uint gameId, uint amount) public returns (bool) {
         require(games[gameId].initialized, "Game Initialized");
         require(games[gameId].winner == address(0), "Finished");
-        // IERC20(tokenContract).balanceOf(msg.sender)
-        // send erc20 to this.
+        require(IERC20(tokenContract).balanceOf(msg.sender) >= amount, "Enough balance");
+
+        require(IERC20(tokenContract).transferFrom(msg.sender, address(this), amount), "Transfer should success");
         if (games[gameId].bettings[msg.sender] == 0) {
             games[gameId].users.push(msg.sender);
         }
@@ -60,7 +56,7 @@ contract Hello is Context, Ownable {
         require(games[gameId].initialized, "Game Initialized");
         require(games[gameId].winner == address(0), "Finished");
         games[gameId].winner = winner;
-        // send erc20 to winner;
+        require(IERC20(tokenContract).transfer(winner, games[gameId].totalBettings), "Reward should success");
         return games[gameId].totalBettings;
     }
 
