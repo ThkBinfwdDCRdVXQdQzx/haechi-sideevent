@@ -595,7 +595,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/4_Hello.sol": "Hello"
+			"contracts/4_Game.sol": "GameContract"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -609,11 +609,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/4_Hello.sol": {
-			"keccak256": "0x95f5fa05860586c821410d6cfe606403f64e4e14c20c4a896b446a5b323fe69e",
+		"contracts/4_Game.sol": {
+			"keccak256": "0x2fce53c492c04b5f7ea62973e992926e84b7dc3b2dcc120f90172944fdb78c33",
 			"urls": [
-				"bzz-raw://3a26f8be3718db1da199d381216b7e68105ccaaa885c356b18702574ad10db91",
-				"dweb:/ipfs/QmYwDutvQBMCuEMUqSPvvKkFYVCHT17F77PYnC3RXKg4rG"
+				"bzz-raw://e37507aa4ccad66dc866aebab0351fea5742c4b2c78f5bf5509dce899596c3da",
+				"dweb:/ipfs/QmVF39aV8dKG6A2zTzF1kXYxpivHmqiAgwUQbscqh2BjmM"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/AccessControl.sol": {
