@@ -3,9 +3,9 @@ pragma solidity >=0.7.0 <0.9.0;
 import {ERC20} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/token/ERC20/ERC20.sol";
 import {AccessControl} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/AccessControl.sol";
 
-contract DedgeCoin is ERC20, AccessControl {
-    string constant _name = "DodgeCoin";
-    string constant _symbol = "DGC";
+contract UNITCoin is ERC20, AccessControl {
+    string constant _name = "Intergalactic Currency";
+    string constant _symbol = "UNIT";
     address public gameContract;
 
     constructor() ERC20(_name, _symbol) {
