@@ -618,7 +618,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/5_DodgeCoin.sol": "UNITCoin"
+			"contracts/5_UNITCoin.sol": "UNITCoin"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -632,7 +632,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/5_DodgeCoin.sol": {
+		"contracts/5_UNITCoin.sol": {
 			"keccak256": "0x39f6fb8d751455f4131da4922c2b5bb928e946c7d73f4fe200486e09a588ded4",
 			"urls": [
 				"bzz-raw://2dc790b45d34126fcf34a4be81013208cec87c481ca9276009fc28964a3d7eb7",
