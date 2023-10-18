@@ -13,6 +13,11 @@ contract DedgeCoin is ERC20, AccessControl {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    function decimals() public view virtual override returns (uint8) {
+        return 0;
+    }
+
+
     function mint(uint amount) public onlyRole(DEFAULT_ADMIN_ROLE) returns (bool) {
         _mint(msg.sender, amount);
         return true;
