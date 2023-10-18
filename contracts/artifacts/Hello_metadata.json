@@ -82,6 +82,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "feePercent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -363,10 +376,10 @@
 	},
 	"sources": {
 		"contracts/4_Hello.sol": {
-			"keccak256": "0xb2aa1f345421fb0f59a59e0847d60a3a100869c05ad89fdfd333001894e46ee1",
+			"keccak256": "0x36ef1fee42f642de44e592ac31fcfaed620dd4113e5d326fc0d18e2efcde8c7f",
 			"urls": [
-				"bzz-raw://d99aee597d23d6663c05b4cd0283b4e163e389af5cb659d6b2b39aeb2b224c18",
-				"dweb:/ipfs/QmZvpPnWagyHFiWuyC9CuvzPi91NnWXf4ACmgbTxK5zWbf"
+				"bzz-raw://34d3d1c49d8e420e433ec550264de1f22878231fa57b9e15ef029da4b30683c4",
+				"dweb:/ipfs/QmY2CJLQSE5W4djt6qRQmQGP2nBHLb4aTrCfu8MktZvTud"
 			]
 		},
 		"contracts/IERC20.sol": {

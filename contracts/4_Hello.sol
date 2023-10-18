@@ -16,13 +16,14 @@ contract Hello is Context, Ownable {
     mapping(uint => Game) public games;
     uint[] public gameIds;
     address public tokenContract;
+    uint public feePercent = 10;
 
     constructor(address initialOwner) Ownable(initialOwner) {
         
     }
 
 
-    function setErc20(address newContract) public returns (bool) {
+    function setErc20(address newContract) public onlyOwner returns (bool) {
         tokenContract = newContract;
         return true;
     }
@@ -52,7 +53,7 @@ contract Hello is Context, Ownable {
         return true;
     }
 
-    function finish(uint gameId, address winner) public returns (uint) {
+    function finish(uint gameId, address winner) public onlyOwner returns (uint) {
         require(games[gameId].initialized, "Game Initialized");
         require(games[gameId].winner == address(0), "Finished");
         games[gameId].winner = winner;
