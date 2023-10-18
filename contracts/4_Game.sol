@@ -1,16 +1,9 @@
 pragma solidity >=0.7.0 <0.9.0;
 
-// import {Context} from "./context.sol";
-// import {IERC20} from "./IERC20.sol";
-// import {Ownable} from "./ownable.sol";
 import {IERC20} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/interfaces/IERC20.sol";
 import {Context} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/utils/Context.sol";
 import {Ownable} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/Ownable.sol";
-
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol";
-import {AccessControl } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/AccessControl.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.4.2/contracts/access/AccessControl.sol";
-// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol
+import {AccessControl} from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/AccessControl.sol";
 
 contract GameContract is Context, AccessControl {
     struct Game {
