@@ -24,11 +24,22 @@ contract GameContract is Context, AccessControl {
     address public tokenContract;
     uint public feePercent = 20;
     uint public feeTotal = 0;
+    mapping(address => string) public names;
+    address[] public userAddresses;
 
     constructor() {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    function enRoll(string memory name) public returns (bool) {
+        require(bytes(name).length < 10, "Name too long");
+        if (bytes(names[msg.sender]).length == 0) {
+            userAddresses.push(msg.sender);
+        }
+        names[msg.sender] = name;
+        
+        return true;
+    }
 
     function setErc20(address newContract) public onlyRole(DEFAULT_ADMIN_ROLE) returns (bool) {
         tokenContract = newContract;
